@@ -26,21 +26,17 @@ def euler_to_quarternion(roll,pitch,yaw):
     qy = (np.cos(roll/2) * np.sin(pitch/2) * np.cos(yaw/2)) + (np.sin(roll/2) * np.cos(pitch/2) * np.sin(yaw/2))
     qz = (np.cos(roll/2) * np.cos(pitch/2) * np.sin(yaw/2)) - (np.sin(roll/2) * np.sin(pitch/2) * np.cos(yaw/2))
     qw = (np.cos(roll/2) * np.cos(pitch/2) * np.cos(yaw/2)) + (np.sin(roll/2) * np.sin(pitch/2) * np.sin(yaw/2))
-
     return qx,qy,qz,qw
 
 def imu_data_recorder():
-
-    topic_pub = rospy.Publisher('imu_data',IMU_msg,queue_size=10)
+    topic_pub = rospy.Publisher('imu_data', IMU_msg, queue_size=10)
     rospy.init_node('imu_data_publisher')
     rospy.logdebug('Reading IMU data from port /ttyUSB0 at Baud rate 115200')
     rate = rospy.Rate(40)
-
     while not rospy.is_shutdown():
         #split the data
         string_data = ser.readline().decode('utf-8')
         split_data = string_data.split(',')
-
         if split_data[0] != '$VNYMR':
             rospy.logwarn('Different data type than $VNYMR detected.')
         elif split_data[2] == '':
@@ -65,14 +61,14 @@ def imu_data_recorder():
             msg.linear_acceleration.z = float(split_data[9])
             msg.angular_velocity.x = float(split_data[10])
             msg.angular_velocity.y = float(split_data[11])
-            #get rid of *XX\r\n at the end of the data list
+            # get rid of *XX\r\n at the end of the data list
             msg.angular_velocity.z = float(split_data[12].split('*')[0])
-            # split_gyro_z = list(split_data[12])
-            # new_gyro_z = "".join(split_gyro_z[:len(split_gyro_z)-5])
-            # msg.angular_velocity.z = float(new_gyro_z)
+            split_gyro_z = list(split_data[12])
+            new_gyro_z = "".join(split_gyro_z[:len(split_gyro_z)-5])
+            msg.angular_velocity.z = float(new_gyro_z)
 
             #convert to quarternion
-            msg.orientation.x, msg.orientation.y, msg.orientation.z, msg.orientation.w = euler_to_quarternion(roll,pitch,yaw)
+            msg.orientation.x, msg.orientation.y, msg.orientation.z, msg.orientation.w = euler_to_quarternion(roll, pitch, yaw)
         
             #log info
             rospy.loginfo(msg)
