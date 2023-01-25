@@ -12,12 +12,11 @@ utmN_data = np.empty((0))
 
 #write data
 for topic, msg, t in bag.read_messages(topics=['/gps_data']):
-    lat_data = np.append(lat_data,msg.latitude)
-    long_data = np.append(long_data,msg.longitude)
-    alt_data = np.append(alt_data,msg.altitude)
-    utmE_data = np.append(utmE_data,msg.utm_easting)
-    utmN_data = np.append(utmN_data,msg.utm_northing)
-    # print(t) #see what this is
+    lat_data = np.append(lat_data, msg.latitude)
+    long_data = np.append(long_data, msg.longitude)
+    alt_data = np.append(alt_data, msg.altitude)
+    utmE_data = np.append(utmE_data, msg.utm_easting)
+    utmN_data = np.append(utmN_data, msg.utm_northing)
 bag.close()
 
 #Making sure shapes are correct
@@ -30,11 +29,11 @@ print('UTM N data shape: {}'.format(utmN_data.shape))
 print('--------------------------------------------------')
 
 #stack data in to one array
-total_data = np.column_stack((lat_data,long_data,alt_data,utmE_data,utmN_data))
+total_data = np.column_stack((lat_data, long_data, alt_data, utmE_data, utmN_data))
 print('Total data shape: {}'.format(total_data.shape))
 
 #write data to a .txt file
-gps_data_txt = open('moving_data_txt.txt','w')
+gps_data_txt = open('moving_data_txt.txt', 'w')
 for row in total_data:
-    np.savetxt(gps_data_txt,row)
+    np.savetxt(gps_data_txt, row)
 gps_data_txt.close()
