@@ -19,7 +19,6 @@ for topic, msg, t in bag.read_messages(topics=['/gpstopic']):
     utmE_data = np.append(utmE_data,msg.utm_easting.data)
     utmN_data = np.append(utmN_data,msg.utm_northing.data)
     gnss_fix = np.append(gnss_fix,msg.fix_quality.data)
-    # print(t) #see what this is
 bag.close()
 
 #Making sure shapes are correct
@@ -40,11 +39,11 @@ print(utmN_data.dtype)
 print(gnss_fix.dtype)
 
 #stack data in to one array
-total_data = np.column_stack((lat_data,long_data,alt_data,utmE_data,utmN_data,gnss_fix))
+total_data = np.column_stack((lat_data, long_data, alt_data, utmE_data, utmN_data, gnss_fix))
 print('Total data shape: {}'.format(total_data.shape))
 
 #write data to a .txt file
-gps_data_txt = open('Open_field_stationary_txt.txt','w')
+gps_data_txt = open('Open_field_stationary_txt.txt', 'w')
 for row in total_data:
-    np.savetxt(gps_data_txt,row)
+    np.savetxt(gps_data_txt, row)
 gps_data_txt.close()

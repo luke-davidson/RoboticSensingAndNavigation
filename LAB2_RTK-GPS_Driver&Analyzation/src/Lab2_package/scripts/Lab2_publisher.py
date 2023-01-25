@@ -14,34 +14,28 @@ from Lab2_package.msg import Lab2_msg
 from std_msgs.msg import Header
 import math
 
-ser = serial.Serial('/dev/ttyACM0',57600)
+ser = serial.Serial('/dev/ttyACM0', 57600)
 
 def min_second_to_decimal(degree_min_s):
-    
     #degree_min_s as type float
-
     deg_decimal_whole = math.trunc(degree_min_s/100)
     min_conversion = math.trunc((degree_min_s/100-deg_decimal_whole)*100)/60
     s_conversion = (degree_min_s-math.trunc(degree_min_s))*100/3600
     degree_decimal = deg_decimal_whole + min_conversion + s_conversion
-
     return degree_decimal
 
 def data_recorder():
-
-    topic_pub = rospy.Publisher('lab2_data',Lab2_msg,queue_size=10)
+    topic_pub = rospy.Publisher('lab2_data', Lab2_msg, queue_size=10)
     rospy.init_node('lab2_data_pub')
     rospy.logdebug('Reading GPS data from port /ttyACM0 at 57600')
-    rate = rospy.Rate(10) #??????????????????????????????????????????????????
-
+    rate = rospy.Rate(10)
     while not rospy.is_shutdown():
-        #split the data so that it's readable
+        # split the data so that it's readable
         string_data = ser.readline().decode('utf-8')
         split_data = string_data.split(',')
         d_type = split_data[0]
-
         if d_type == '$GNGGA':
-            #parse lat long alt and directions from $GPGGA data
+            # parse lat long alt and directions from $GPGGA data
             if split_data[2] == '':
                 rospy.logwarn('Data is empty, cannot get a reading.')
             else:
@@ -57,13 +51,13 @@ def data_recorder():
                 longitude_decimal = min_second_to_decimal(longitude)
 
                 if lat_dir == 'S':
-                    latitude_decimal = -1*latitude_decimal
+                    latitude_decimal *= -1
                 elif long_dir == 'W':
-                    longitude_decimal = -1*longitude_decimal
+                    longitude_decimal *= -1
             
                 #msg values
                 msg = GPS_msg()
-                # Header().stamp.secs = rospy.Time.now()
+                Header().stamp.secs = rospy.Time.now()
                 msg.header = Header()
                 msg.latitude = latitude_decimal
                 msg.longitude = longitude_decimal
@@ -76,7 +70,7 @@ def data_recorder():
                 #log info
                 rospy.loginfo(msg)
                 topic_pub.publish(msg)
-                rate.sleep() #??????????????????????????????????????????????????
+                rate.sleep()
 
 
 if __name__ == '__main__':
