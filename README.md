@@ -1,4 +1,4 @@
-# EECE 5554 - Robotic Sensing and Navigation
+# Robotic Sensing and Navigation
 This repo holds all labs completed for my Robotic Sensing and Navigation course (Spring 2022).
 
 # Lab Descriptions
