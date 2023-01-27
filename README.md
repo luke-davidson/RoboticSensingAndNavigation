@@ -6,7 +6,7 @@ This repo holds all labs completed for my Robotic Sensing and Navigation course 
 ## Lab 1 --- GPS Analyzation
 Error analyzation of both stationary and transient GPS data.
 
-***Report:*** `LAB1_GPS_Driver&Analyzation/src/Lab1_Report.pdf`
+***Report:*** [`LAB1_GPS_Driver&Analyzation/src/Lab1_Report.pdf`](https://github.com/luke-davidson/EECE5554-RoboticSensingAndNavigation/blob/main/LAB1_GPS_Driver%26Analyzation/src/Lab1_Report.pdf)
 
 ### Structure
 |Main Folders + Files|Description|
