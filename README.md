@@ -6,18 +6,18 @@ This repo holds all labs completed for my Robotic Sensing and Navigation course 
 ## Lab 1 --- GPS Analyzation
 Error analyzation of both stationary and transient GPS data.
 
-***Report:*** [`LAB1_GPS_Driver&Analyzation/src/Lab1_Report.pdf`](https://github.com/luke-davidson/EECE5554-RoboticSensingAndNavigation/blob/main/LAB1_GPS_Driver%26Analyzation/src/Lab1_Report.pdf)
+***Report:*** [`LAB1_GPS_Driver&Analyzation/src/Lab1_Report.pdf`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB1_GPS_Driver%26Analyzation/src/Lab1_Report.pdf)
 
 ### Structure
 |Main Folders + Files|Description|
 |--------------------|-----------|
-|`src/Gps_driver/`|Main folder of the ROS package, directly holding the `CMakeLists.txt` and `package.xml` files|
-|`src/Gps_driver/msg/GPS_msg.msg`|ROS `.msg` file used to publish the recorded data|
-|`src/Gps_driver/scripts/LAB1_publisher.py`|Main ROS publisher script used to publish data to the ROS node|
-|`src/analysis_scripts/`|Holds the scripts used to analyze the recorded data|
-|`src/analysis_scripts/moving_analyzer.py`|Script used to analyze the transient GPS data|
-|`src/analysis_scripts/stationary_analyzer.py`|Script used to analyze the stationary GPS data|
-|`src/data/`|Holds the raw data files in `.bag` and `.txt` files|
+|[`src/Gps_driver/`](https://github.com/luke-davidson/RoboticSensingAndNavigation/tree/main/LAB1_GPS_Driver%26Analyzation/src/Gps_driver)|Main folder of the ROS package, directly holding the `CMakeLists.txt` and `package.xml` files|
+|[`src/Gps_driver/msg/GPS_msg.msg`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB1_GPS_Driver%26Analyzation/src/Gps_driver/msg/GPS_msg.msg)|ROS `.msg` file used to publish the recorded data|
+|[`src/Gps_driver/scripts/LAB1_publisher.py`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB1_GPS_Driver%26Analyzation/src/Gps_driver/scripts/LAB1_publisher.py)|Main ROS publisher script used to publish data to the ROS node|
+|[`src/analysis_scripts/`](https://github.com/luke-davidson/RoboticSensingAndNavigation/tree/main/LAB1_GPS_Driver%26Analyzation/src/analysis_scripts)|Holds the scripts used to analyze the recorded data|
+|[`src/analysis_scripts/moving_analyzer.py`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB1_GPS_Driver%26Analyzation/src/analysis_scripts/moving_analyzer.py)|Script used to analyze the transient GPS data|
+|[`src/analysis_scripts/stationary_analyzer.py`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB1_GPS_Driver%26Analyzation/src/analysis_scripts/stationary_analyzer.py)|Script used to analyze the stationary GPS data|
+|[`src/data/`](https://github.com/luke-davidson/RoboticSensingAndNavigation/tree/main/LAB1_GPS_Driver%26Analyzation/src/data)]|Holds the raw data files in `.bag` and `.txt` files|
 
 ## Lab 2 --- RTK-GPS Analyzation
 
