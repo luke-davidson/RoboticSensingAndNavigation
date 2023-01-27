@@ -23,65 +23,65 @@ Error analyzation of both stationary and transient GPS data.
 
 Error analyzation of both stationary and transient RTK-GPS data.
 
-***Report:*** `LAB2_RTK-GPS_Driver&Analyzation/Lab2_Report.pdf`
+***Report:*** [`LAB2_RTK-GPS_Driver&Analyzation/Lab2_Report.pdf`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB2_RTK-GPS_Driver%26Analyzation/Lab2_Report.pdf)
 
 ### Structure
 |Main Folders + Files|Description|
 |--------------------|-----------|
-|`src/Lab2_package/`|Main folder of the ROS package, directly holding the `CMakeLists.txt` and `package.xml` files|
-|`src/Lab2_package/msg/Lab2_msg.msg`|ROS `.msg` file used to publish the recorded data|
-|`src/Lab2_package/scripts/Lab2_publisher.py`|Main ROS publisher script used to publish data to the ROS node|
-|`src/analysis/`|Holds the scripts used to analyze the recorded data|
-|`src/analysis/moving_analyzer.py`|Script used to analyze the transient GPS data|
-|`src/analysis/stationary_analyzer.py`|Script used to analyze the stationary GPS data|
-|`data/`|Holds the raw data files in `.bag` and `.txt` files|
+|[`src/Lab2_package/`](https://github.com/luke-davidson/RoboticSensingAndNavigation/tree/main/LAB2_RTK-GPS_Driver%26Analyzation/src/Lab2_package)|Main folder of the ROS package, directly holding the `CMakeLists.txt` and `package.xml` files|
+|[`src/Lab2_package/msg/Lab2_msg.msg`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB2_RTK-GPS_Driver%26Analyzation/src/Lab2_package/msg/Lab2_msg.msg)|ROS `.msg` file used to publish the recorded data|
+|[`src/Lab2_package/scripts/Lab2_publisher.py`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB2_RTK-GPS_Driver%26Analyzation/src/Lab2_package/scripts/Lab2_publisher.py)|Main ROS publisher script used to publish data to the ROS node|
+|[`src/Lab2_package/analysis/`](https://github.com/luke-davidson/RoboticSensingAndNavigation/tree/main/LAB2_RTK-GPS_Driver%26Analyzation/src/Lab2_package/analysis)|Holds the scripts used to analyze the recorded data|
+|[`src/Lab2_package/analysis/moving_analyzer.py`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB2_RTK-GPS_Driver%26Analyzation/src/Lab2_package/analysis/moving_analyzer.py)|Script used to analyze the transient GPS data|
+|[`src/Lab2_package/analysis/stationary_analyzer.py`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB2_RTK-GPS_Driver%26Analyzation/src/Lab2_package/analysis/stationary_analyzer.py)|Script used to analyze the stationary GPS data|
+|[`data/`](https://github.com/luke-davidson/RoboticSensingAndNavigation/tree/main/LAB2_RTK-GPS_Driver%26Analyzation/data)|Holds the raw data files in `.bag` and `.txt` files|
 
 ## Lab 3 --- IMU Analyzation 
 
 Error analyzation of stationary IMU data, including allan variance analysis.
 
-***Report:*** `LAB3_IMU_Stationary/Lab3_Report.pdf`
+***Report:*** [`LAB3_IMU_Stationary/Lab3_Report.pdf`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB3_IMU_Stationary/Lab3_Report.pdf)
 
 ### Structure
 |Main Folders + Files|Description|
 |--------------------|-----------|
-|`src/lab3_package/`|Main folder of the ROS package, directly holding the `CMakeLists.txt` and `package.xml` files|
-|`src/lab3_package/msg/IMU_msg.msg`|ROS `.msg` file used to publish the recorded data|
-|`src/lab3_package/scripts/lab3_publisher.py`|Main ROS publisher script used to publish data to the ROS node|
-|`src/analysis/`|Holds the scripts used to analyze the recorded data|
-|`src/analysis/group_analyzer.py`|Script used to analyze the group collected stationary IMU data|
-|`src/analysis/individual_analyzer.py`|Script used to analyze the individually collected transient IMU data|
-|`src/analysis/allan_variance.m`|MATLAB script used to plot the allan variance plots of the stationary IMU data|
-|`data/`|Holds the raw data files in `.bag` and `.csv` files|
+|[`src/lab3_package/`](https://github.com/luke-davidson/RoboticSensingAndNavigation/tree/main/LAB3_IMU_Stationary/src/lab3_package)|Main folder of the ROS package, directly holding the `CMakeLists.txt` and `package.xml` files|
+|[`src/lab3_package/msg/IMU_msg.msg`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB3_IMU_Stationary/src/lab3_package/msg/IMU_msg.msg)|ROS `.msg` file used to publish the recorded data|
+|[`src/lab3_package/scripts/lab3_publisher.py`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB3_IMU_Stationary/src/lab3_package/scripts/lab3_publisher.py)|Main ROS publisher script used to publish data to the ROS node|
+|[`src/analysis/`](https://github.com/luke-davidson/RoboticSensingAndNavigation/tree/main/LAB3_IMU_Stationary/src/analysis)|Holds the scripts used to analyze the recorded data|
+|[`src/analysis/group_analyzer.py`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB3_IMU_Stationary/src/analysis/group_analyzer.py)|Script used to analyze the group collected stationary IMU data|
+|[`src/analysis/individual_analyzer.py`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB3_IMU_Stationary/src/analysis/individual_analyzer.py)|Script used to analyze the individually collected transient IMU data|
+|[`src/analysis/allan_variance.m`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB3_IMU_Stationary/src/analysis/allan_variance.m)|MATLAB script used to plot the allan variance plots of the stationary IMU data|
+|[`data/`](https://github.com/luke-davidson/RoboticSensingAndNavigation/tree/main/LAB3_IMU_Stationary/data)|Holds the raw data files in `.bag` and `.csv` files|
 
 
 ## Lab 4 --- IMU Localization
 
 Using IMU magnetometer, accelerometer, and angular data to plot the trajectory of a car ride. Implemented soft iron heading correction, yaw calculations from magnetometer data, velocity calculations from integrated accelerometer data, trajectory estimations via dead reckoning, and a calculation of the IMU placement with respect to the vehicle frame.
 
-***Report:*** `LAB4_IMU+GPS_Localization/Lab4_Report.pdf`
+***Report:*** [`LAB4_IMU+GPS_Localization/Lab4_Report.pdf`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB4_IMU%2BGPS_Localization/Lab4_Report.pdf)
 
 ### Structure
 |Main Folders + Files|Description|
 |--------------------|-----------|
-|`src/lab4_package/`|Main folder of the ROS package, directly holding the `CMakeLists.txt` and `package.xml` files|
-|`src/lab4_package/msg/IMU_msg.msg`|ROS `.msg` file used to publish the incoming IMU data|
-|`src/lab4_package/msg/GPS_msg.msg`|ROS `.msg` file used to publish the incoming GPS data|
-|`src/lab4_package/scripts/imu_data_pub_lab4.py`|ROS publisher script used to publish IMU data to the ROS node|
-|`src/lab4_package/scripts/gps_data_pub_lab4.py`|ROS publisher script used to publish GPS data to the ROS node|
-|`src/analysis/`|Holds the script used to analyze the recorded data|
-|`src/analysis/analyzer.py`|Script used to perform all analyzations|
-|`src/data/`|Holds the raw data files in `.bag` and `.csv` files|
+|[`src/lab4_package/`](https://github.com/luke-davidson/RoboticSensingAndNavigation/tree/main/LAB4_IMU%2BGPS_Localization/src/lab4_package)|Main folder of the ROS package, directly holding the `CMakeLists.txt` and `package.xml` files|
+|[`src/lab4_package/msg/IMU_msg.msg`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB4_IMU%2BGPS_Localization/src/lab4_package/msg/IMU_msg.msg)|ROS `.msg` file used to publish the incoming IMU data|
+|[`src/lab4_package/msg/GPS_msg.msg`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB4_IMU%2BGPS_Localization/src/lab4_package/msg/GPS_msg.msg)|ROS `.msg` file used to publish the incoming GPS data|
+|[`src/lab4_package/scripts/imu_data_pub_lab4.py`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB4_IMU%2BGPS_Localization/src/lab4_package/scripts/imu_data_pub_lab4.py)|ROS publisher script used to publish IMU data to the ROS node|
+|[`src/lab4_package/scripts/gps_data_pub_lab4.py`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB4_IMU%2BGPS_Localization/src/lab4_package/scripts/gps_data_pub_lab4.py)|ROS publisher script used to publish GPS data to the ROS node|
+|[`src/analysis/`](https://github.com/luke-davidson/RoboticSensingAndNavigation/tree/main/LAB4_IMU%2BGPS_Localization/src/analysis)|Holds the script used to analyze the recorded data|
+|[`src/analysis/analyzer.py`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/LAB4_IMU%2BGPS_Localization/src/analysis/analyzer.py)|Script used to perform all analyzations|
+|[`src/data/`](https://github.com/luke-davidson/RoboticSensingAndNavigation/tree/main/LAB4_IMU%2BGPS_Localization/src/data)|Holds the raw data files in `.bag` and `.csv` files|
 
 
 ## Lab 5 --- Image Stitching
 
 Image stitching of murals across campus via Harris corner detectors and feature matching.
 
-***Report:*** `Lab5_Image_Stitching/Lab5_Report.pdf`
-***Code:*** `Lab5_Image_Stitching/EECE5554_Lab5.m`
+***Report:*** [`Lab5_Image_Stitching/Lab5_Report.pdf`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/Lab5_Image_Stitching/Lab5_Report.pdf)
+***Code:*** [`Lab5_Image_Stitching/EECE5554_Lab5.m`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/Lab5_Image_Stitching/EECE5554_Lab5.m)
 
 ## Mini Project
 Mini project done on a meal delivery AMR, including feature, power, navigation and sensing analyses.
 
-***Report:*** `Mini_Project/EECE5554_LukeDavidson_IndividualProject.pdf`
+***Report:*** [`Mini_Project/EECE5554_LukeDavidson_IndividualProject.pdf`](https://github.com/luke-davidson/RoboticSensingAndNavigation/blob/main/Mini_Project/EECE5554_LukeDavidson_IndividualProject.pdf)
